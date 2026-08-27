@@ -30,7 +30,7 @@
       letter-spacing: -0.025em;
     }
     .container {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
@@ -77,8 +77,8 @@
     }
     .img-wrap {
       background: #eae8e3;
-      aspect-ratio: 16/9;
       overflow: hidden;
+      border-radius: 10px;
     }
     .img-wrap img {
       width: 100%;
@@ -86,8 +86,11 @@
       object-fit: cover;
       display: block;
     }
-    .img-wrap.square {
-      aspect-ratio: 4/3;
+    .img-thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
     }
     .badge {
       background: #f0efeb;
@@ -110,7 +113,7 @@
     .step-num {
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 600;
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: #cdcbc4;
       min-width: 2rem;
       letter-spacing: -0.02em;
@@ -132,11 +135,6 @@
       font-size: 1.4rem;
       letter-spacing: -0.02em;
     }
-    .hr-soft {
-      border: none;
-      border-top: 1px solid #e2e0da;
-      margin: 0.5rem 0 1.5rem;
-    }
     .link-underline {
       position: relative;
       text-decoration: none;
@@ -154,11 +152,30 @@
     .link-underline:hover::after {
       width: 100%;
     }
-    @media (min-width: 768px) {
-      .grid-2 {
-        display: grid;
-        grid-template-columns: 1fr 1.1fr;
-        gap: 2rem;
+    .image-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .image-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+    }
+    .thumb-wrapper {
+      overflow: hidden;
+      border-radius: 14px 14px 0 0;
+    }
+    .thumb-wrapper img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+    @media (max-width: 640px) {
+      .image-grid-2,
+      .image-grid-3 {
+        grid-template-columns: 1fr 1fr;
       }
     }
   </style>
@@ -220,15 +237,13 @@
 
     <!-- ===== 1. TEA GROWER APP ===== -->
     <div class="project-card mb-14">
-      <div class="img-wrap">
-        <img src="img/tea-hero.png" alt="ADB Tea Grower App" />
-      </div>
-      <div class="img-wrap mt-0.5" style="aspect-ratio: 16/8;">
-        <img src="img/tea-screens.png" alt="Tea Grower App screens" />
+      <!-- Thumbnail header -->
+      <div class="thumb-wrapper">
+        <img src="img/adb-thumbnail.png" alt="ADB Tea Grower App" />
       </div>
 
       <div class="p-6 md:p-8">
-        <div class="flex flex-wrap items-start justify-between gap-3">
+        <div class="flex flex-wrap items-start justify-between gap-3 mb-5">
           <div>
             <span class="text-xs font-mono text-[#6b6a65] tracking-wider">01 / Mobile · Public Sector</span>
             <h3 class="text-2xl md:text-3xl font-semibold mt-1">ADB Tea Grower App</h3>
@@ -243,6 +258,16 @@
             <span class="badge">Design System</span>
             <span class="badge">Flutter</span>
             <span class="badge">WCAG</span>
+          </div>
+        </div>
+
+        <!-- Smaller images -->
+        <div class="image-grid-2 mb-6">
+          <div class="img-wrap rounded-lg">
+            <img src="img/tea-hero.png" alt="Tea Grower App hero" />
+          </div>
+          <div class="img-wrap rounded-lg">
+            <img src="img/tea-screens.png" alt="Tea Grower App screens" />
           </div>
         </div>
 
@@ -340,23 +365,13 @@
 
     <!-- ===== 2. SLSI CERTIFICATION ===== -->
     <div class="project-card mb-14">
-      <div class="img-wrap">
-        <img src="img/slsi-register.png" alt="SLSI registration" />
-      </div>
-      <div class="grid grid-cols-2 gap-0.5 mt-0.5">
-        <div class="img-wrap square">
-          <img src="img/slsi-login.png" alt="SLSI login" />
-        </div>
-        <div class="img-wrap square">
-          <img src="img/slsi-dashboard.png" alt="SLSI dashboard" />
-        </div>
-      </div>
-      <div class="img-wrap mt-0.5" style="aspect-ratio: 16/6;">
-        <img src="img/slsi-flowmap.png" alt="SLSI flow map" />
+      <!-- Thumbnail header -->
+      <div class="thumb-wrapper">
+        <img src="img/slsi-thumbnail.png" alt="SLSI Organic Certification Portal" />
       </div>
 
       <div class="p-6 md:p-8">
-        <div class="flex flex-wrap items-start justify-between gap-3">
+        <div class="flex flex-wrap items-start justify-between gap-3 mb-5">
           <div>
             <span class="text-xs font-mono text-[#6b6a65] tracking-wider">02 / Web Platform · Ongoing</span>
             <h3 class="text-2xl md:text-3xl font-semibold mt-1">SLSI Organic Certification Portal</h3>
@@ -371,6 +386,24 @@
             <span class="badge">User Flows</span>
             <span class="badge">Design QA</span>
             <span class="badge">Design System</span>
+          </div>
+        </div>
+
+        <!-- Smaller images -->
+        <div class="image-grid-2 mb-6">
+          <div class="img-wrap rounded-lg">
+            <img src="img/slsi-register.png" alt="SLSI registration" />
+          </div>
+          <div class="img-wrap rounded-lg">
+            <img src="img/slsi-login.png" alt="SLSI login" />
+          </div>
+        </div>
+        <div class="image-grid-2 mb-6">
+          <div class="img-wrap rounded-lg">
+            <img src="img/slsi-dashboard.png" alt="SLSI dashboard" />
+          </div>
+          <div class="img-wrap rounded-lg" style="aspect-ratio: 16/9;">
+            <img src="img/slsi-flowmap.png" alt="SLSI flow map" />
           </div>
         </div>
 
@@ -477,20 +510,13 @@
 
     <!-- ===== 3. MO MARKETPLACE ===== -->
     <div class="project-card">
-      <div class="img-wrap">
-        <img src="img/mo-cover.png" alt="MO Marketplace cover" />
-      </div>
-      <div class="grid grid-cols-2 gap-0.5 mt-0.5">
-        <div class="img-wrap square" style="background: #1a1917;">
-          <img src="img/mo-screens.png" alt="MO screens" />
-        </div>
-        <div class="img-wrap square" style="background: #1a1917;">
-          <img src="img/mo-tokens.png" alt="MO design tokens" />
-        </div>
+      <!-- Thumbnail header -->
+      <div class="thumb-wrapper">
+        <img src="img/mo-thumbnail.png" alt="MO Marketplace Redesign" />
       </div>
 
       <div class="p-6 md:p-8">
-        <div class="flex flex-wrap items-start justify-between gap-3">
+        <div class="flex flex-wrap items-start justify-between gap-3 mb-5">
           <div>
             <span class="text-xs font-mono text-[#6b6a65] tracking-wider">03 / Self-initiated · Case Study</span>
             <h3 class="text-2xl md:text-3xl font-semibold mt-1">MO Marketplace Redesign</h3>
@@ -506,6 +532,24 @@
             <span class="badge">Figma</span>
             <span class="badge">UI Audit</span>
           </div>
+        </div>
+
+        <!-- Smaller images -->
+        <div class="image-grid-2 mb-6">
+          <div class="img-wrap rounded-lg">
+            <img src="img/mo-cover.png" alt="MO Marketplace cover" />
+          </div>
+          <div class="img-wrap rounded-lg" style="background: #1a1917;">
+            <img src="img/mo-screens.png" alt="MO screens" />
+          </div>
+        </div>
+        <div class="image-grid-2 mb-6">
+          <div class="img-wrap rounded-lg" style="background: #1a1917;">
+            <img src="img/mo-tokens.png" alt="MO design tokens" />
+          </div>
+          <!-- <div class="img-wrap rounded-lg" style="background: #eae8e3; display: flex; align-items: center; justify-content: center; color: #6b6a65; font-size: 0.8rem; min-height: 120px;">
+            <span class="text-center text-sm">Design tokens &amp;<br>component library</span>
+          </div> -->
         </div>
 
         <div class="mt-6">
