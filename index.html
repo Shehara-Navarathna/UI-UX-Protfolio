@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shehara Navarathna · UI/UX Engineer</title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f7f6f3;
+      color: #1a1917;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1,
+    h2,
+    h3,
+    .display-font {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .tag {
+      display: inline-block;
+      background: #ecebe7;
+      padding: 0.2rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: #2b2a27;
+    }
+    .tag-dark {
+      display: inline-block;
+      background: #1a1917;
+      color: #f7f6f3;
+      padding: 0.2rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+    .tag-green {
+      display: inline-block;
+      background: #e4ebe0;
+      color: #2a4a2a;
+      padding: 0.15rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+    .project-card {
+      background: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+      border: 1px solid #eeedea;
+      transition: box-shadow 0.25s;
+    }
+    .project-card:hover {
+      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.06);
+    }
+    .img-wrap {
+      background: #eae8e3;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+    }
+    .img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .img-wrap.square {
+      aspect-ratio: 4/3;
+    }
+    .badge {
+      background: #f0efeb;
+      padding: 0.15rem 0.8rem;
+      border-radius: 16px;
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: #3d3c38;
+      letter-spacing: 0.01em;
+    }
+    .step {
+      display: flex;
+      gap: 1rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid #f0efeb;
+    }
+    .step:last-child {
+      border-bottom: none;
+    }
+    .step-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #cdcbc4;
+      min-width: 2rem;
+      letter-spacing: -0.02em;
+    }
+    .highlight {
+      background: #f5f4f0;
+      border-radius: 14px;
+      padding: 1.25rem;
+      border-left: 3px solid #1a1917;
+    }
+    .footer-line {
+      border-top: 1px solid #e2e0da;
+      padding-top: 2rem;
+      margin-top: 2.5rem;
+    }
+    .stat-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 1.4rem;
+      letter-spacing: -0.02em;
+    }
+    .hr-soft {
+      border: none;
+      border-top: 1px solid #e2e0da;
+      margin: 0.5rem 0 1.5rem;
+    }
+    .link-underline {
+      position: relative;
+      text-decoration: none;
+    }
+    .link-underline::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #1a1917;
+      transition: width 0.25s;
+    }
+    .link-underline:hover::after {
+      width: 100%;
+    }
+    @media (min-width: 768px) {
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="sticky top-0 z-50 bg-[#f7f6f3]/90 backdrop-blur-sm border-b border-[#e2e0da]/60">
+    <div class="container flex items-center justify-between h-16 md:h-20">
+      <span class="display-font text-lg tracking-tight">Shehara Navarathna</span>
+      <div class="flex items-center gap-6 text-sm font-medium text-[#2b2a27]">
+        <a href="#work" class="link-underline">Work</a>
+        <a href="#about" class="link-underline">About</a>
+        <a href="#contact" class="link-underline">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="container pt-14 pb-10 md:pt-24 md:pb-16">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="tag-dark">UI/UX Engineer</span>
+        <span class="text-xs text-[#6b6a65] font-mono tracking-wider">Colombo · 2026</span>
+      </div>
+      <h1 class="text-4xl md:text-6xl leading-[1.08] tracking-tight font-semibold">
+        Designing enterprise tools <br><span class="bg-[#1a1917] text-[#f7f6f3] px-3 py-0.5 inline-block rounded-xl">that millions trust</span>
+      </h1>
+      <p class="text-lg md:text-xl text-[#2b2a27] mt-5 leading-relaxed max-w-2xl">
+        Two years of designing and building platforms for tea-industry digitisation, organic certification, and fintech. From Figma to React, Angular, and Tailwind — no handoff gap.
+      </p>
+      <div class="flex flex-wrap gap-2 mt-6">
+        <span class="tag">React</span>
+        <span class="tag">Angular</span>
+        <span class="tag">Design Systems</span>
+        <span class="tag">Figma</span>
+        <span class="tag">WCAG</span>
+        <span class="tag">Flutter</span>
+        <span class="tag">Prototyping</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-6 mt-8 text-sm text-[#3d3c38]">
+        <div><span class="stat-number">50+</span> <span class="text-[#6b6a65]">user flows</span></div>
+        <span class="w-px h-5 bg-[#d6d4ce]"></span>
+        <div><span class="stat-number">35%</span> <span class="text-[#6b6a65]">fewer revisions</span></div>
+        <span class="w-px h-5 bg-[#d6d4ce]"></span>
+        <div><span class="stat-number">3</span> <span class="text-[#6b6a65]">live platforms</span></div>
+        <span class="w-px h-5 bg-[#d6d4ce]"></span>
+        <div><span class="stat-number">6</span> <span class="text-[#6b6a65]">user roles</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WORK ===== -->
+  <section id="work" class="container py-6 md:py-10">
+    <div class="flex items-center justify-between border-b border-[#e2e0da] pb-4 mb-10">
+      <h2 class="text-2xl md:text-4xl font-semibold tracking-tight">Selected work</h2>
+      <span class="text-sm font-mono text-[#6b6a65]">03 case studies</span>
+    </div>
+
+    <!-- ===== 1. TEA GROWER APP ===== -->
+    <div class="project-card mb-14">
+      <div class="img-wrap">
+        <img src="img/tea-hero.png" alt="ADB Tea Grower App" />
+      </div>
+      <div class="img-wrap mt-0.5" style="aspect-ratio: 16/8;">
+        <img src="img/tea-screens.png" alt="Tea Grower App screens" />
+      </div>
+
+      <div class="p-6 md:p-8">
+        <div class="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <span class="text-xs font-mono text-[#6b6a65] tracking-wider">01 / Mobile · Public Sector</span>
+            <h3 class="text-2xl md:text-3xl font-semibold mt-1">ADB Tea Grower App</h3>
+            <div class="flex flex-wrap gap-2 mt-2">
+              <span class="tag-green">Live on Google Play</span>
+              <span class="tag-green">6 user roles</span>
+              <span class="tag-green">3 languages</span>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge">Figma</span>
+            <span class="badge">Design System</span>
+            <span class="badge">Flutter</span>
+            <span class="badge">WCAG</span>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-[#6b6a65]">Overview</h4>
+          <p class="text-[#2b2a27] mt-1 leading-relaxed">
+            A national mobile platform for Sri Lanka's tea industry, replacing paper ledgers with a unified app for growers, dealers, collectors, factories, tea inspectors, and service providers. Built with ADB, KPMG, and the Sri Lanka Tea Board.
+          </p>
+        </div>
+
+        <div class="mt-5 highlight">
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-[#6b6a65]">The challenge</h4>
+          <p class="text-[#2b2a27] mt-1 leading-relaxed">
+            Ninety-nine percent of users are rural with very low technical literacy. Ninety percent use the app in tea fields under harsh sunlight with dirty hands. The interface had to be visible, simple, and forgiving — not an air-conditioned office experience.
+          </p>
+        </div>
+
+        <div class="mt-5">
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-[#6b6a65]">User research</h4>
+          <ul class="list-disc pl-5 text-[#2b2a27] mt-1 space-y-0.5 text-sm">
+            <li>Met with main stakeholder (TSHDA) who provided deep insights into user needs</li>
+            <li>Understood that 99% of users are rural with low digital literacy</li>
+            <li>Designed for extreme conditions: direct sunlight, dirty hands, low-end devices</li>
+            <li>Supported three languages: English, Sinhala, and Tamil</li>
+          </ul>
+        </div>
+
+        <div class="mt-6">
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-[#6b6a65]">Design process</h4>
+          <div class="mt-2">
+            <div class="step">
+              <span class="step-num">01</span>
+              <div><span class="font-medium">Research and discovery</span>
+                <p class="text-sm text-[#6b6a65]">Stakeholder meetings with TSHDA, understanding user personas, constraints, and cultural context.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num">02</span>
+              <div><span class="font-medium">Wireframing</span>
+                <p class="text-sm text-[#6b6a65]">Used AI to generate initial wireframes to overcome blank canvas syndrome, then refined based on user context.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num">03</span>
+              <div><span class="font-medium">Interactive prototyping</span>
+                <p class="text-sm text-[#6b6a65]">Created over 50 interactive prototypes in Figma for stakeholder validation and early testing.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num">04</span>
+              <div><span class="font-medium">User testing and iteration</span>
+                <p class="text-sm text-[#6b6a65]">Early satisfaction wasn't high with SLTB — redesigned and delivered the current version based on real feedback.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num">05</span>
+              <div><span class="font-medium">Development in Flutter</span>
+                <p class="text-sm text-[#6b6a65]">Implemented the UI in Flutter — my first Flutter project, but delivered quality work.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-[#6b6a65]">Collaboration and impact</h4>
+          <div class="grid md:grid-cols-2 gap-4 mt-2">
+            <div class="bg-[#f5f4f0] rounded-xl p-4">
+              <p class="font-medium text-sm">Stakeholder collaboration</p>
+              <ul class="text-sm text-[#3d3c38] mt-1 space-y-0.5 list-disc pl-4">
+                <li>Regular meetings with ADB, KPMG, SLTB</li>
+                <li>Incorporated feedback from Ministry of Plantation</li>
+                <li>Worked with TSHDA for user insights</li>
+              </ul>
+            </div>
+            <div class="bg-[#f5f4f0] rounded-xl p-4">
+              <p class="font-medium text-sm">Results</p>
+              <ul class="text-sm text-[#3d3c38] mt-1 space-y-0.5 list-disc pl-4">
+                <li>Good user adoption nationwide</li>
+                <li>35% fewer revision cycles through early prototyping</li>
+                <li>Redesigned based on feedback to improve satisfaction</li>
+                <li>Live on Google Play — deployed across Sri Lanka</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5 highlight">
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-[#6b6a65]">Personal challenge</h4>
+          <p class="text-[#2b2a27] mt-1 leading-relaxed">
+            I took on front-end development in Flutter for this project — a framework I had never used before. This pushed me to learn quickly, collaborate with the development team, and deliver quality work beyond my design scope.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 2. SLSI CERTIFICATION ===== -->
+    <div class="project-card mb-14">
+      <div class="img-wrap">
+        <img src="img/slsi-register.png" alt="SLSI registration" />
+      </div>
+      <div class="grid grid-cols-2 gap-0.5 mt-0.5">
+        <div class="img-wrap square">
+          <img src="img/slsi-login.png" alt="SLSI login" />
+        </div>
+        <div class="img-wrap square">
+          <img src="img/slsi-dashboard.png" alt="SLSI dashboard" />
+        </div>
+      </div>
+      <div class="img-wrap mt-0.5" style="aspect-ratio: 16/6;">
+        <img src="img/slsi-flowmap.png" alt="SLSI flow map" />
+      </div>
+
+      <div class="p-6 md:p-8">
+        <div class="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <span class="text-xs font-mono text-[#6b6a65] tracking-wider">02 / Web Platform · Ongoing</span>
+            <h3 class="text-2xl md:text-3xl font-semibold mt-1">SLSI Organic Certification Portal</h3>
+            <div class="flex flex-wrap gap-2 mt-2">
+              <span class="tag-green">150+ screens</span>
+              <span class="tag-green">12 user roles</span>
+              <span class="tag-green">Multi-scheme</span>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge">Dashboard Design</span>
+            <span class="badge">User Flows</span>
+            <span class="badge">Design QA</span>
+            <span class="badge">Design System</span>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-[#6b6a65]">Overview</h4>
+          <p class="text-[#2b2a27] mt-1 leading-relaxed">
+            An end-to-end certification management platform for the Sri Lanka Standards Institution. It manages organic product certification across 12 internal roles — from application to audit to final certification — supporting both Sri Lankan and EU organic standards.
+          </p>
+        </div>
+
+        <div class="mt-5 highlight">
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-[#6b6a65]">The challenge</h4>
+          <p class="text-[#2b2a27] mt-1 leading-relaxed">
+            Multiple very long applications and a complex rollback system — if any role rejects the certification, it must roll back through the entire workflow for resolution. The system must pass through all roles, each with different responsibilities and approvals.
+          </p>
+        </div>
+
+        <div class="mt-5">
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-[#6b6a65]">User research</h4>
+          <ul class="list-disc pl-5 text-[#2b2a27] mt-1 space-y-0.5 text-sm">
+            <li>Interviewed all 12 internal roles in dedicated meetings</li>
+            <li>Understood each role's responsibilities: SDD, MA, PO, Director, DG, DDG, Auditor, Internal Auditor, Certification Manager, Technical Officer</li>
+            <li>Mapped the entire certification lifecycle from application to certificate issuance</li>
+          </ul>
+        </div>
+
+        <div class="mt-6">
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-[#6b6a65]">Design process</h4>
+          <div class="mt-2">
+            <div class="step">
+              <span class="step-num">01</span>
+              <div><span class="font-medium">Stakeholder interviews</span>
+                <p class="text-sm text-[#6b6a65]">Conducted in-depth interviews with all 12 roles to document their responsibilities, pain points, and needs.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num">02</span>
+              <div><span class="font-medium">Workflow mapping</span>
+                <p class="text-sm text-[#6b6a65]">Mapped the entire 150+ screen certification process — from application submission to final certificate issuance.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num">03</span>
+              <div><span class="font-medium">Dashboard design</span>
+                <p class="text-sm text-[#6b6a65]">Designed role-specific dashboards — simple for applicants, comprehensive for executive-level roles.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num">04</span>
+              <div><span class="font-medium">Design system</span>
+                <p class="text-sm text-[#6b6a65]">Built a reusable component library with consistent typography (Roboto), green and white color palette, and design tokens.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num">05</span>
+              <div><span class="font-medium">Rollback flow design</span>
+                <p class="text-sm text-[#6b6a65]">Designed the complex rollback mechanism — if any role rejects, the application returns through the workflow for resolution.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-[#6b6a65]">Certification workflow</h4>
+          <div class="bg-[#f5f4f0] rounded-xl p-4 mt-2 text-sm">
+            <p class="font-medium">End-to-end process</p>
+            <ol class="list-decimal pl-5 mt-1 space-y-0.5 text-[#3d3c38]">
+              <li>Applicant applies → proceeds to payment</li>
+              <li>MA confirms payment → application gets registration number</li>
+              <li>SDD reviews → assigns PO, audit team, and technical evaluator</li>
+              <li>Director approves or rejects the assignees</li>
+              <li>PO reviews → fills application review form, scope of certification, risk assessments</li>
+              <li>Audit team conducts audit → submits report</li>
+              <li>Report passes through Director, DDG, DG → final review by Technical Evaluator</li>
+              <li>Technical Evaluator decides whether to grant certification</li>
+            </ol>
+            <p class="text-xs text-[#6b6a65] mt-2 italic">Rollback: If any role rejects, the application rolls back through the workflow for resolution.</p>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-[#6b6a65]">Collaboration and impact</h4>
+          <div class="grid md:grid-cols-2 gap-4 mt-2">
+            <div class="bg-[#f5f4f0] rounded-xl p-4">
+              <p class="font-medium text-sm">Stakeholder collaboration</p>
+              <ul class="text-sm text-[#3d3c38] mt-1 space-y-0.5 list-disc pl-4">
+                <li>Met with all 12 roles individually</li>
+                <li>Regular design reviews with SLSI</li>
+                <li>Still in ongoing design phase</li>
+              </ul>
+            </div>
+            <div class="bg-[#f5f4f0] rounded-xl p-4">
+              <p class="font-medium text-sm">Progress and challenges</p>
+              <ul class="text-sm text-[#3d3c38] mt-1 space-y-0.5 list-disc pl-4">
+                <li>Mapped 150+ screens</li>
+                <li>Designed for all 12 roles</li>
+                <li>Ongoing challenge: SLSI keeps changing applications — they have 20-30 applications to manage</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 3. MO MARKETPLACE ===== -->
+    <div class="project-card">
+      <div class="img-wrap">
+        <img src="img/mo-cover.png" alt="MO Marketplace cover" />
+      </div>
+      <div class="grid grid-cols-2 gap-0.5 mt-0.5">
+        <div class="img-wrap square" style="background: #1a1917;">
+          <img src="img/mo-screens.png" alt="MO screens" />
+        </div>
+        <div class="img-wrap square" style="background: #1a1917;">
+          <img src="img/mo-tokens.png" alt="MO design tokens" />
+        </div>
+      </div>
+
+      <div class="p-6 md:p-8">
+        <div class="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <span class="text-xs font-mono text-[#6b6a65] tracking-wider">03 / Self-initiated · Case Study</span>
+            <h3 class="text-2xl md:text-3xl font-semibold mt-1">MO Marketplace Redesign</h3>
+            <div class="flex flex-wrap gap-2 mt-2">
+              <span class="tag-green">Design Tokens</span>
+              <span class="tag-green">Component Library</span>
+              <span class="tag-green">Figma Prototype</span>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge">Design Tokens</span>
+            <span class="badge">Component Library</span>
+            <span class="badge">Figma</span>
+            <span class="badge">UI Audit</span>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-[#6b6a65]">Overview</h4>
+          <p class="text-[#2b2a27] mt-1 leading-relaxed">
+            A self-directed redesign of a Sri Lankan marketplace app. The goal wasn't to invent new features, but to reorganize existing ones — trust badges, personalisation, and chat — to the moment a buyer actually needs them.
+          </p>
+        </div>
+
+        <div class="mt-5 highlight">
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-[#6b6a65]">Why I chose this project</h4>
+          <p class="text-[#2b2a27] mt-1 leading-relaxed">
+            I felt the existing MO interface lacked visual-first browsing — discovery wasn't engaging enough. I wanted to explore how visual merchandising, collections, and trust signals could create a more compelling shopping experience.
+          </p>
+        </div>
+
+        <div class="mt-5">
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-[#6b6a65]">Research and competitive analysis</h4>
+          <p class="text-[#2b2a27] mt-1 text-sm">I explored these apps to understand best practices:</p>
+          <div class="flex flex-wrap gap-2 mt-2">
+            <span class="bg-[#f5f4f0] px-3 py-1.5 rounded-xl text-sm">Depop</span>
+            <span class="bg-[#f5f4f0] px-3 py-1.5 rounded-xl text-sm">Shein</span>
+            <span class="bg-[#f5f4f0] px-3 py-1.5 rounded-xl text-sm">Etsy</span>
+            <span class="bg-[#f5f4f0] px-3 py-1.5 rounded-xl text-sm">Pinterest</span>
+            <span class="bg-[#f5f4f0] px-3 py-1.5 rounded-xl text-sm">Facebook Marketplace</span>
+            <span class="bg-[#f5f4f0] px-3 py-1.5 rounded-xl text-sm">TikTok Shop</span>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-[#6b6a65]">Design process</h4>
+          <div class="mt-2">
+            <div class="step">
+              <span class="step-num">01</span>
+              <div><span class="font-medium">UI audit</span>
+                <p class="text-sm text-[#6b6a65]">Analyzed the existing MO app to identify friction points in discovery, category browsing, and product detail flows.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num">02</span>
+              <div><span class="font-medium">Design tokens</span>
+                <p class="text-sm text-[#6b6a65]">Created a token system — color, typography, spacing, shadows — based on MO's existing brand identity.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num">03</span>
+              <div><span class="font-medium">Component library</span>
+                <p class="text-sm text-[#6b6a65]">Built reusable components: buttons, filter chips, badges, category rings, product cards.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num">04</span>
+              <div><span class="font-medium">Flow redesign</span>
+                <p class="text-sm text-[#6b6a65]">Redesigned discovery, category browsing, and product detail flows with visual-first principles.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num">05</span>
+              <div><span class="font-medium">Interactive prototype</span>
+                <p class="text-sm text-[#6b6a65]">Built a fully interactive Figma prototype to test the new experience.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-[#6b6a65]">Key improvements</h4>
+          <div class="grid grid-cols-2 gap-3 mt-2">
+            <div class="bg-[#f5f4f0] rounded-xl p-3">
+              <p class="font-medium text-sm">Discovery</p>
+              <p class="text-sm text-[#3d3c38]">Visual-first browsing with trending collections and personalized recommendations</p>
+            </div>
+            <div class="bg-[#f5f4f0] rounded-xl p-3">
+              <p class="font-medium text-sm">Trust badges</p>
+              <p class="text-sm text-[#3d3c38]">Relocated to the moment buyers need them — product detail and checkout</p>
+            </div>
+            <div class="bg-[#f5f4f0] rounded-xl p-3">
+              <p class="font-medium text-sm">Chat</p>
+              <p class="text-sm text-[#3d3c38]">Moved inline with product browsing for instant seller connection</p>
+            </div>
+            <div class="bg-[#f5f4f0] rounded-xl p-3">
+              <p class="font-medium text-sm">Visual merchandising</p>
+              <p class="text-sm text-[#3d3c38]">Category rings, curated collections, and inspirational layouts</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5 highlight">
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-[#6b6a65]">Reflection</h4>
+          <p class="text-[#2b2a27] mt-1 leading-relaxed">
+            This project reinforced my belief that good design isn't about adding features — it's about reorganizing what exists into something more intuitive. It also deepened my understanding of design tokens and component-based design, which I've applied in my professional work at CICRA.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="container py-12 border-t border-[#e2e0da]">
+    <div class="grid md:grid-cols-5 gap-10 md:gap-16">
+      <div class="md:col-span-2">
+        <h2 class="text-2xl md:text-4xl font-semibold tracking-tight">About</h2>
+        <p class="text-[#2b2a27] text-base leading-relaxed mt-4">
+          I'm a UI/UX Engineer at CICRA Solutions, reading for a B.Sc. (Hons) in IT at SLIIT. I design systems in Figma, then build them in React, Angular, Tailwind, and Flutter — bridging design and development seamlessly.
+        </p>
+        <div class="mt-6 space-y-3 text-sm">
+          <div class="flex gap-4">
+            <span class="text-[#6b6a65] font-mono w-20">2024 — now</span>
+            <div><span class="font-medium">Associate UI Engineer</span> · CICRA Solutions</div>
+          </div>
+          <div class="flex gap-4">
+            <span class="text-[#6b6a65] font-mono w-20">2022 — 2026</span>
+            <div><span class="font-medium">B.Sc. (Hons) IT</span> · SLIIT</div>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2 mt-6">
+          <span class="tag">User Flows</span>
+          <span class="tag">Wireframing</span>
+          <span class="tag">Prototyping</span>
+          <span class="tag">Design Systems</span>
+          <span class="tag">WCAG</span>
+          <span class="tag">Usability Testing</span>
+          <span class="tag">Flutter</span>
+          <span class="tag">React</span>
+          <span class="tag">Angular</span>
+          <span class="tag">Tailwind</span>
+        </div>
+      </div>
+      <div class="md:col-span-3">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-white rounded-2xl p-5 border border-[#eeedea]">
+            <p class="text-xs font-mono text-[#6b6a65]">Certification</p>
+            <p class="text-sm font-semibold mt-1">Google UX Design</p>
+            <p class="text-xs text-[#6b6a65]">2026</p>
+          </div>
+          <div class="bg-white rounded-2xl p-5 border border-[#eeedea]">
+            <p class="text-xs font-mono text-[#6b6a65]">Certification</p>
+            <p class="text-sm font-semibold mt-1">Foundations of UX</p>
+            <p class="text-xs text-[#6b6a65]">Microsoft · 2024</p>
+          </div>
+          <div class="bg-white rounded-2xl p-5 border border-[#eeedea]">
+            <p class="text-xs font-mono text-[#6b6a65]">Certification</p>
+            <p class="text-sm font-semibold mt-1">AWS Cloud Foundations</p>
+            <p class="text-xs text-[#6b6a65]">AWS · 2024</p>
+          </div>
+          <div class="bg-white rounded-2xl p-5 border border-[#eeedea] flex items-center justify-center text-[#6b6a65] text-sm">
+            Figma · Angular · React · Flutter
+          </div>
+        </div>
+        <div class="mt-6 bg-[#ecebe7] rounded-2xl p-5 flex items-center justify-between">
+          <span class="text-sm font-medium">Design-to-dev handoff</span>
+          <span class="text-sm font-mono text-[#1a1917]">● seamless</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <footer id="contact" class="container footer-line">
+    <div class="grid md:grid-cols-2 gap-8 items-end">
+      <div>
+        <h2 class="text-2xl md:text-4xl font-semibold leading-tight">Let's build something<br>that has to work.</h2>
+        <p class="text-sm text-[#2b2a27] mt-3 max-w-md">Available for full-time roles · open to impactful projects.</p>
+      </div>
+      <div class="md:text-right space-y-1.5">
+        <a href="mailto:sheharana455@gmail.com" class="block text-lg font-medium hover:opacity-60 transition">sheharana455@gmail.com</a>
+        <a href="tel:+94701256486" class="block text-lg font-medium hover:opacity-60 transition">+94 70 125 6486</a>
+        <p class="text-sm text-[#6b6a65]">Piliyandala, Western Province, Sri Lanka</p>
+      </div>
+    </div>
+    <div class="mt-12 pt-6 border-t border-[#e2e0da] flex flex-wrap justify-between items-center text-xs text-[#6b6a65]">
+      <span>© 2026 Shehara Navarathna · UI/UX Engineer</span>
+      <span>crafted with precision</span>
+    </div>
+  </footer>
+
+</body>
+</html>
