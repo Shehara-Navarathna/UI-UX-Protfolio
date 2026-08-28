@@ -78,17 +78,11 @@
     .img-wrap {
       background: #eae8e3;
       overflow: hidden;
-      border-radius: 10px;
+      border-radius: 8px;
     }
     .img-wrap img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .img-thumb {
-      width: 100%;
-      aspect-ratio: 16/9;
       object-fit: cover;
       display: block;
     }
@@ -155,27 +149,34 @@
     .image-grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px;
+      gap: 6px;
     }
     .image-grid-3 {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 8px;
+      gap: 6px;
     }
     .thumb-wrapper {
       overflow: hidden;
       border-radius: 14px 14px 0 0;
+      padding: 1rem 1rem 0 1rem;
+      background: #f7f6f3;
     }
     .thumb-wrapper img {
       width: 100%;
-      aspect-ratio: 16/9;
+      aspect-ratio: 16/7;
       object-fit: cover;
       display: block;
+      border-radius: 10px;
+      border: 1px solid #eeedea;
     }
     @media (max-width: 640px) {
       .image-grid-2,
       .image-grid-3 {
         grid-template-columns: 1fr 1fr;
+      }
+      .thumb-wrapper img {
+        aspect-ratio: 16/6;
       }
     }
   </style>
@@ -237,7 +238,7 @@
 
     <!-- ===== 1. TEA GROWER APP ===== -->
     <div class="project-card mb-14">
-      <!-- Thumbnail header -->
+      <!-- Thumbnail - smaller -->
       <div class="thumb-wrapper">
         <img src="img/adb-thumbnail.png" alt="ADB Tea Grower App" />
       </div>
@@ -261,12 +262,12 @@
           </div>
         </div>
 
-        <!-- Smaller images -->
+        <!-- Cleaner image cards -->
         <div class="image-grid-2 mb-6">
-          <div class="img-wrap rounded-lg">
+          <div class="img-wrap rounded-lg shadow-sm border border-[#eeedea]">
             <img src="img/tea-hero.png" alt="Tea Grower App hero" />
           </div>
-          <div class="img-wrap rounded-lg">
+          <div class="img-wrap rounded-lg shadow-sm border border-[#eeedea]">
             <img src="img/tea-screens.png" alt="Tea Grower App screens" />
           </div>
         </div>
@@ -365,7 +366,7 @@
 
     <!-- ===== 2. SLSI CERTIFICATION ===== -->
     <div class="project-card mb-14">
-      <!-- Thumbnail header -->
+      <!-- Thumbnail - smaller -->
       <div class="thumb-wrapper">
         <img src="img/slsi-thumbnail.png" alt="SLSI Organic Certification Portal" />
       </div>
@@ -389,20 +390,20 @@
           </div>
         </div>
 
-        <!-- Smaller images -->
+        <!-- Cleaner image cards -->
         <div class="image-grid-2 mb-6">
-          <div class="img-wrap rounded-lg">
+          <div class="img-wrap rounded-lg shadow-sm border border-[#eeedea]">
             <img src="img/slsi-register.png" alt="SLSI registration" />
           </div>
-          <div class="img-wrap rounded-lg">
+          <div class="img-wrap rounded-lg shadow-sm border border-[#eeedea]">
             <img src="img/slsi-login.png" alt="SLSI login" />
           </div>
         </div>
         <div class="image-grid-2 mb-6">
-          <div class="img-wrap rounded-lg">
+          <div class="img-wrap rounded-lg shadow-sm border border-[#eeedea]">
             <img src="img/slsi-dashboard.png" alt="SLSI dashboard" />
           </div>
-          <div class="img-wrap rounded-lg" style="aspect-ratio: 16/9;">
+          <div class="img-wrap rounded-lg shadow-sm border border-[#eeedea]" style="aspect-ratio: 16/9;">
             <img src="img/slsi-flowmap.png" alt="SLSI flow map" />
           </div>
         </div>
@@ -510,7 +511,7 @@
 
     <!-- ===== 3. MO MARKETPLACE ===== -->
     <div class="project-card">
-      <!-- Thumbnail header -->
+      <!-- Thumbnail - smaller -->
       <div class="thumb-wrapper">
         <img src="img/mo-thumbnail.png" alt="MO Marketplace Redesign" />
       </div>
@@ -534,22 +535,22 @@
           </div>
         </div>
 
-        <!-- Smaller images -->
+        <!-- Cleaner image cards -->
         <div class="image-grid-2 mb-6">
-          <div class="img-wrap rounded-lg">
+          <div class="img-wrap rounded-lg shadow-sm border border-[#eeedea]">
             <img src="img/mo-cover.png" alt="MO Marketplace cover" />
           </div>
-          <div class="img-wrap rounded-lg" style="background: #1a1917;">
+          <div class="img-wrap rounded-lg shadow-sm border border-[#eeedea]" style="background: #1a1917;">
             <img src="img/mo-screens.png" alt="MO screens" />
           </div>
         </div>
         <div class="image-grid-2 mb-6">
-          <div class="img-wrap rounded-lg" style="background: #1a1917;">
+          <div class="img-wrap rounded-lg shadow-sm border border-[#eeedea]" style="background: #1a1917;">
             <img src="img/mo-tokens.png" alt="MO design tokens" />
           </div>
-          <!-- <div class="img-wrap rounded-lg" style="background: #eae8e3; display: flex; align-items: center; justify-content: center; color: #6b6a65; font-size: 0.8rem; min-height: 120px;">
-            <span class="text-center text-sm">Design tokens &amp;<br>component library</span>
-          </div> -->
+          <div class="img-wrap rounded-lg shadow-sm border border-[#eeedea]" style="background: #eae8e3; display: flex; align-items: center; justify-content: center; color: #6b6a65; font-size: 0.75rem; min-height: 120px;">
+            <span class="text-center">Design tokens &amp; component library</span>
+          </div>
         </div>
 
         <div class="mt-6">
